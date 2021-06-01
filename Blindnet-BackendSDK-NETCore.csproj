@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>Blindnet_BackendSDK_NETCore</RootNamespace>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>C:\Projects\Blindnet\Blindnet-BackendSDK-NETCore\Blindnet-BackendSDK-NETCore.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>C:\Projects\Blindnet\Blindnet-BackendSDK-NETCore\Blindnet-BackendSDK-NETCore.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Portable.BouncyCastle" Version="1.8.10" />
+    <PackageReference Include="ScottBrady.IdentityModel" Version="1.4.0" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.11.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+
+</Project>
