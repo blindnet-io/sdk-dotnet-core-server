@@ -109,7 +109,7 @@ namespace Blindnet
 
             return tokenString;
         }
-        
+
         /// <summary>
         /// Generate client token
         /// </summary>
@@ -128,6 +128,39 @@ namespace Blindnet
                 TokenType = AppSettings.ClientTokenName,
                 Subject = new ClaimsIdentity(claims.ToArray()),
                 Expires = DateTime.Now.ToUniversalTime().AddDays(1),
+                SigningCredentials = new SigningCredentials(new EdDsaSecurityKey(_privateKey), ExtendedSecurityAlgorithms.EdDsa)
+            };
+
+            var token = tokenHandler.CreateToken(tokenDescriptor);
+            var tokenString = tokenHandler.WriteToken(token);
+
+            return tokenString;
+        }
+
+        public string GenerateSymmetricKeyToken(string dataId, string groupId)
+        {
+            var tokenHandler = new JwtSecurityTokenHandler();
+
+            var claims = new List<Claim>
+            {
+                new Claim(AppSettings.TokenAppIDParamName, _appID)
+            };
+
+            if (!string.IsNullOrEmpty(dataId))
+            {
+                claims.Add(new Claim(AppSettings.TokenDataIDParamName, dataId));
+            }
+
+            if (!string.IsNullOrEmpty(groupId))
+            {
+                claims.Add(new Claim(AppSettings.TokenUserGroupIDParamName, groupId));
+            }
+
+            var tokenDescriptor = new SecurityTokenDescriptor
+            {
+                TokenType = AppSettings.SymmetricKeyTokenName,
+                Subject = new ClaimsIdentity(claims.ToArray()),
+                Expires = DateTime.Now.ToUniversalTime().AddHours(3),
                 SigningCredentials = new SigningCredentials(new EdDsaSecurityKey(_privateKey), ExtendedSecurityAlgorithms.EdDsa)
             };
 
