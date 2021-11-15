@@ -37,7 +37,7 @@ namespace Blindnet.Utils
         public const string TokenDataIDParamName = "did";
 
         /// <summary>
-        /// Regular token type name
+        /// Regular token type name (intended for registered users)
         /// </summary>
         public const string RegularTokenName = "jwt";
         /// <summary>
@@ -45,12 +45,13 @@ namespace Blindnet.Utils
         /// </summary>
         public const string ClientTokenName = "cjwt";
         /// <summary>
-        /// One-time token type name
+        /// Temporary token type name (intended for non-registered users)
         /// </summary>
         public const string ShortTokenName = "tjwt";
         /// <summary>
         /// Symmetric key token type name
         /// </summary>
         public const string SymmetricKeyTokenName = "sjwt";
+        public const string TempTokenName = "tjwt";
     }
 }
