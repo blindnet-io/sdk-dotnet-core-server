@@ -133,12 +133,12 @@ namespace Blindnet
                 TokenType = AppSettings.SymmetricKeyTokenName,
                 Subject = new ClaimsIdentity(claims.ToArray()),
                 Expires = DateTime.Now.ToUniversalTime().AddHours(3),
-                SigningCredentials = new SigningCredentials(new EdDsaSecurityKey(_privateKey), ExtendedSecurityAlgorithms.EdDsa)
+                SigningCredentials = new SigningCredentials(new EdDsaSecurityKey(_appKey), ExtendedSecurityAlgorithms.EdDsa)
             };
 
             return CreateAndSign(tokenDescriptor);
         }
-        
+
         private void RefreshClientToken()
         {
             var claims = new List<Claim>
@@ -261,7 +261,7 @@ namespace Blindnet
             {
                 return true;
             }
-            else 
+            else
             {
                 throw new BlindnetException(errMsg + ". API response was " + httpCode);
             }
