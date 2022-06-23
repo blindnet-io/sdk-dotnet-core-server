@@ -26,7 +26,7 @@
 
 ## About
 
-This is the .Net Core [server-side SDK](https://docs.blindnet.io/docs/extra/glossary#server-side-sdk) component of [blindnet devkit][devkit] allowing you to:
+This is the .Net Core [server-side SDK](https://docs.blindnet.io/docs/glossary#server-side-sdk) component of [blindnet devkit][devkit] allowing you to:
 
 - Generate [authentication tokens](https://docs.blindnet.io/docs/extra/glossary#authentication-token) to allow users to access blindnet.
 - Manage application users and data on blindnet.
