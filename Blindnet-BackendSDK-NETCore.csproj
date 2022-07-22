@@ -5,6 +5,11 @@
     <RootNamespace>Blindnet_ServerSDK_NETCore</RootNamespace>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <PackageId>Blindnet.SDK.NetCore</PackageId>
+    <Version>1.0.1</Version>
+    <Authors>Blindnet.SDK.NetCore</Authors>
+    <Company>Blindnet</Company>
+    <Product>SDK.NetCore</Product>
   </PropertyGroup>
 
   <ItemGroup>
