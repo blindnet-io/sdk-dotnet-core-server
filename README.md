@@ -38,10 +38,19 @@ This is the .Net Core [server-side SDK](https://docs.blindnet.io/docs/glossary#s
 ## Installation
 
 <!-- FIXME: add install steps -->
-Use [{package manager or plateform}][install-tool] to install {project's name}:
 
-```bash
-{install-command}
+Here you can find [NuGet package](https://www.nuget.org/packages/Blindnet.SDK.NetCore/).
+
+Install with Package Manager:
+
+```
+Install-Package Blindnet.SDK.NetCore -Version 1.0.1
+```
+
+Install with .NET CLI:
+
+```
+dotnet add package Blindnet.SDK.NetCore --version 1.0.1
 ```
 
 <!-- FIXME: add API Reference
@@ -60,7 +69,8 @@ If you have any broader questions or suggestions, just open a simple informal [D
 ## Community
 
 > All community participation is subject to blindnet’s [Code of Conduct][coc].
-Stay up to date with new releases and projects, learn more about how to protect your privacy and that of our users, and share projects and feedback with our team.
+> Stay up to date with new releases and projects, learn more about how to protect your privacy and that of our users, and share projects and feedback with our team.
+
 - [Join our Slack Workspace][chat] to chat with the blindnet community and team
 - Follow us on [Twitter][twitter] to stay up to date with the latest news
 - Check out our [Openness Framework][openness] and [Product Management][product] on Github to see how we operate and give us feedback.
@@ -70,11 +80,12 @@ Stay up to date with new releases and projects, learn more about how to protect 
 The blindnet devkit sdk-dotnet-core-server is available under [MIT][license] (and [here](https://github.com/blindnet-io/openness-framework/blob/main/docs/decision-records/DR-0001-oss-license.md) is why).
 
 <!-- project's URLs -->
+
 [new-issue]: https://github.com/blindnet-io/sdk-dotnet-core-server/issues/new/choose
 [fork]: https://github.com/blindnet-io/sdk-dotnet-core-server/fork
 
-
 <!-- common URLs -->
+
 [devkit]: https://github.com/blindnet-io/blindnet.dev
 [openness]: https://github.com/blindnet-io/openness-framework
 [product]: https://github.com/blindnet-io/product-management
