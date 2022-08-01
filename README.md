@@ -53,10 +53,82 @@ Install with .NET CLI:
 dotnet add package Blindnet.SDK.NetCore --version 1.0.1
 ```
 
-<!-- FIXME: add API Reference
 ## Usage
-📑 The API reference of blindnet devkit Node.js Server SDK is available on [blindnet.dev](https://docs.blindnet.io/docs/api_reference/server/node.js/latest).
--->
+
+### Initialization
+
+You need to initialize blindnet SDK before you can use it.
+
+```
+var blindnet = Blindnet.Init(appKey, appId);
+```
+
+There is an optional param to define blindnet API endpoint that SDK will target, by defailt it's set to `https://api.blindnet.io`.
+
+If you want to change endpoint:
+
+```
+var blindnet = Blindnet.Init(appKey, appId, apiEndpoint);
+```
+
+All SDK methods are availabe from Blindnet instance
+
+```
+var blindnet = Blindnet.Init(appKey, appId, apiEndpoint);
+var token = blindnet.CreateUserToken(userId);
+```
+
+### Creating user tokens
+
+Two types of tokens are needed: tokens for registered users and temporary tokens.
+
+#### Create a token for a registered user
+
+Creates a JWT for registered users of your application, usually data receivers.
+
+```
+public string CreateUserToken(string userId, string? groupId)
+```
+
+#### Create a temporary token
+
+Creates a JWT for non-registered users of your application, usually data senders.
+
+```
+public string CreateTempUserToken(string? groupId)
+```
+
+### Deleting data keys
+
+Deletes an encrypted data key from blindnet.
+
+```
+public async Task<bool> ForgetData(string dataId)
+```
+
+### Revoking access to user
+
+Deletes all encrypted data keys of a given user.
+
+```
+public async Task<bool> RevokeAccess(string userId)
+```
+
+### Deleting user
+
+Deletes a user from blindnet.
+
+```
+public async Task<bool> ForgetUser(string userId)
+```
+
+### Delete all users from group
+
+Deletes all users that belong to the group and all their encrypted data keys.
+
+```
+public async Task<bool> ForgetGroup(string groupId)
+```
 
 ## Contributing
 
