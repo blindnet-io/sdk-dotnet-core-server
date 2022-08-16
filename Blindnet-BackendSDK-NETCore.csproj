@@ -2,9 +2,15 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-    <RootNamespace>Blindnet_BackendSDK_NETCore</RootNamespace>
+    <RootNamespace>Blindnet_ServerSDK_NETCore</RootNamespace>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <PackageId>Blindnet.SDK.NetCore</PackageId>
+    <Version>1.0.1</Version>
+    <Authors>Blindnet.SDK.NetCore</Authors>
+    <Company>Blindnet</Company>
+    <Product>SDK.NetCore</Product>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -12,6 +18,10 @@
     <PackageReference Include="Portable.BouncyCastle" Version="1.8.10" />
     <PackageReference Include="ScottBrady.IdentityModel" Version="1.4.0" />
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.11.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="LICENSE" Pack="true" PackagePath=""/>
   </ItemGroup>
 
 </Project>
