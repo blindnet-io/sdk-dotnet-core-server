@@ -38,16 +38,97 @@ This is the .Net Core [server-side SDK](https://docs.blindnet.io/docs/glossary#s
 ## Installation
 
 <!-- FIXME: add install steps -->
-Use [{package manager or plateform}][install-tool] to install {project's name}:
 
-```bash
-{install-command}
+Here you can find [NuGet package](https://www.nuget.org/packages/Blindnet.SDK.NetCore/).
+
+Install with Package Manager:
+
+```
+Install-Package Blindnet.SDK.NetCore -Version 1.0.1
 ```
 
-<!-- FIXME: add API Reference
+Install with .NET CLI:
+
+```
+dotnet add package Blindnet.SDK.NetCore --version 1.0.1
+```
+
 ## Usage
-📑 The API reference of blindnet devkit Node.js Server SDK is available on [blindnet.dev](https://docs.blindnet.io/docs/api_reference/server/node.js/latest).
--->
+
+### Initialization
+
+You need to initialize blindnet SDK before you can use it.
+
+```
+var blindnet = Blindnet.Init(appKey, appId);
+```
+
+There is an optional param to define blindnet API endpoint that SDK will target, by defailt it's set to `https://api.blindnet.io`.
+
+If you want to change endpoint:
+
+```
+var blindnet = Blindnet.Init(appKey, appId, apiEndpoint);
+```
+
+All SDK methods are availabe from Blindnet instance
+
+```
+var blindnet = Blindnet.Init(appKey, appId, apiEndpoint);
+var token = blindnet.CreateUserToken(userId);
+```
+
+### Creating user tokens
+
+Two types of tokens are needed: tokens for registered users and temporary tokens.
+
+#### Create a token for a registered user
+
+Creates a JWT for registered users of your application, usually data receivers.
+
+```
+public string CreateUserToken(string userId, string? groupId)
+```
+
+#### Create a temporary token
+
+Creates a JWT for non-registered users of your application, usually data senders.
+
+```
+public string CreateTempUserToken(string? groupId)
+```
+
+### Deleting data keys
+
+Deletes an encrypted data key from blindnet.
+
+```
+public async Task<bool> ForgetData(string dataId)
+```
+
+### Revoking access to user
+
+Deletes all encrypted data keys of a given user.
+
+```
+public async Task<bool> RevokeAccess(string userId)
+```
+
+### Deleting user
+
+Deletes a user from blindnet.
+
+```
+public async Task<bool> ForgetUser(string userId)
+```
+
+### Delete all users from group
+
+Deletes all users that belong to the group and all their encrypted data keys.
+
+```
+public async Task<bool> ForgetGroup(string groupId)
+```
 
 ## Contributing
 
@@ -60,7 +141,8 @@ If you have any broader questions or suggestions, just open a simple informal [D
 ## Community
 
 > All community participation is subject to blindnet’s [Code of Conduct][coc].
-Stay up to date with new releases and projects, learn more about how to protect your privacy and that of our users, and share projects and feedback with our team.
+> Stay up to date with new releases and projects, learn more about how to protect your privacy and that of our users, and share projects and feedback with our team.
+
 - [Join our Slack Workspace][chat] to chat with the blindnet community and team
 - Follow us on [Twitter][twitter] to stay up to date with the latest news
 - Check out our [Openness Framework][openness] and [Product Management][product] on Github to see how we operate and give us feedback.
@@ -70,11 +152,12 @@ Stay up to date with new releases and projects, learn more about how to protect 
 The blindnet devkit sdk-dotnet-core-server is available under [MIT][license] (and [here](https://github.com/blindnet-io/openness-framework/blob/main/docs/decision-records/DR-0001-oss-license.md) is why).
 
 <!-- project's URLs -->
+
 [new-issue]: https://github.com/blindnet-io/sdk-dotnet-core-server/issues/new/choose
 [fork]: https://github.com/blindnet-io/sdk-dotnet-core-server/fork
 
-
 <!-- common URLs -->
+
 [devkit]: https://github.com/blindnet-io/blindnet.dev
 [openness]: https://github.com/blindnet-io/openness-framework
 [product]: https://github.com/blindnet-io/product-management
