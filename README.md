@@ -1,5 +1,5 @@
 <h1 align="center">
-  blindnet devkit<br />
+  blindnet encryption engine<br />
   .Net Core SDK
 </h1>
 
@@ -26,14 +26,14 @@
 
 ## About
 
-This is the .Net Core [server-side SDK](https://docs.blindnet.io/docs/glossary#server-side-sdk) component of [blindnet devkit][devkit] allowing you to:
+This is the .Net Core [server-side SDK](https://blindnet.dev/docs/references/glossary#server-side-sdk) component of the blindnet encryption engine allowing you to:
 
-- Generate [authentication tokens](https://docs.blindnet.io/docs/extra/glossary#authentication-token) to allow users to access blindnet.
+- Generate [authentication tokens](https://blindnet.dev/docs/references/glossary#authentication-token) to allow users to access blindnet.
 - Manage application users and data on blindnet.
 
 ## Get Started
 
-:rocket: Check out our [Quick Start Guide](https://blindnet.dev/docs/quickstart) to get started in a snap.
+:rocket: Check out our [Quick Start Guide](https://blindnet.dev/docs/encryption/quickstart) to get started in a snap.
 
 ## Installation
 
@@ -158,7 +158,6 @@ The blindnet devkit sdk-dotnet-core-server is available under [MIT][license] (an
 
 <!-- common URLs -->
 
-[devkit]: https://github.com/blindnet-io/blindnet.dev
 [openness]: https://github.com/blindnet-io/openness-framework
 [product]: https://github.com/blindnet-io/product-management
 [request]: https://github.com/blindnet-io/devrel-management/issues/new?assignees=noelmace&labels=request%2Ctriage&template=request.yml&title=%5BRequest%5D%3A+
